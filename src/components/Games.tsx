@@ -3,6 +3,7 @@ import { Gamepad2, Trophy, Star, Play, Clock, Zap } from 'lucide-react';
 import CryptoWordHunt from './CorruptionCodeBreaker';
 import RatKnowledgeQuiz from './RatKnowledgeQuiz';
 import BlockchainTowerStacker from './BlockchainTowerStacker';
+import MemeMatch from './MemeMatch';
 
 const Games: React.FC = () => {
   const [selectedGame, setSelectedGame] = useState<number | null>(null);
@@ -53,16 +54,17 @@ const Games: React.FC = () => {
     },
     {
       id: 4,
-      title: "Rat Lab",
-      description: "A vibrant crypto alchemy game where you mix digital elements like Gold, Zinc, Power, and Blockchain to discover unique NFT items and virtual tools through fusion!",
-      icon: "🧪",
-      difficulty: "Medium",
+      title: "Meme Match",
+      description: "A sewer-themed Match-3 puzzle game! Match corruption tiles, expose lies, and reveal hilarious anti-establishment memes. Features daily challenges and special combo effects!",
+      icon: "🧀",
+      difficulty: "Easy",
       duration: "10-20 min",
-      category: "Crafting",
-      rewards: "Rare NFTs",
-      status: "Coming Soon",
+      category: "Puzzle",
+      rewards: "200-1000 $RAT",
+      status: "Live",
       bgColor: "from-purple-600 to-purple-800",
-      players: 0
+      players: 1250,
+      gameComponent: "meme-match"
     },
     {
       id: 5,
@@ -106,6 +108,7 @@ const Games: React.FC = () => {
       case 'Knowledge': return 'bg-blue-600';
       case 'Logic Puzzle': return 'bg-purple-600';
       case 'Action': return 'bg-red-600';
+      case 'Puzzle': return 'bg-purple-600';
       case 'Crafting': return 'bg-green-600';
       case 'Luck': return 'bg-yellow-600';
       case 'Strategy': return 'bg-gray-600';
@@ -136,6 +139,10 @@ const Games: React.FC = () => {
     return <BlockchainTowerStacker onBack={handleBackToGames} />;
   }
 
+  if (activeGame === 'meme-match') {
+    return <MemeMatch onBack={handleBackToGames} />;
+  }
+
   return (
     <div className="h-full overflow-y-auto smooth-scroll">
       <div className="min-h-full bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] p-3 sm:p-6">
@@ -158,7 +165,7 @@ const Games: React.FC = () => {
           {/* Stats Cards */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-12">
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-3 sm:p-6 border border-slate-700 text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-[#FACC15] mb-1">3</div>
+              <div className="text-2xl sm:text-3xl font-bold text-[#FACC15] mb-1">4</div>
               <div className="text-gray-400 text-xs sm:text-sm">Live Games</div>
             </div>
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-3 sm:p-6 border border-slate-700 text-center">
