@@ -142,8 +142,12 @@ const Games: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8 sm:mb-12">
-            <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-[#FACC15] rounded-2xl mb-4 sm:mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-[#FACC15] rounded-2xl mb-4 sm:mb-6 relative">
               <Gamepad2 size={32} className="text-[#0f172a]" />
+              {/* BETA Label */}
+              <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+                BETA
+              </div>
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-[#FACC15] mb-4">$RAT Games Hub</h1>
             <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
