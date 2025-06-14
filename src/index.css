@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FACC15;
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e6b800;
+}
+
+::-webkit-scrollbar-corner {
+  background: #1a1a1a;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #FACC15 #1a1a1a;
+}
+
+/* Smooth scrolling for all elements */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom smooth scroll for chat area */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar but keep functionality for chat input */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: all 0.2s ease;
+}
+
+/* Better focus states */
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #FACC15;
+}
+
+/* Smooth animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Better text selection */
+::selection {
+  background: #FACC15;
+  color: #222;
+}
+
+::-moz-selection {
+  background: #FACC15;
+  color: #222;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Prevent zoom on input focus on iOS */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  textarea,
+  select {
+    font-size: 16px;
+  }
+  
+  /* Better touch targets */
+  button,
+  a,
+  input,
+  textarea {
+    min-height: 44px;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Better spacing for mobile */
+  .mobile-spacing {
+    padding: 0.75rem;
+  }
+}
+
+/* Responsive text sizes */
+@media (max-width: 640px) {
+  .responsive-text-lg {
+    font-size: 1rem;
+  }
+  
+  .responsive-text-xl {
+    font-size: 1.125rem;
+  }
+  
+  .responsive-text-2xl {
+    font-size: 1.25rem;
+  }
+  
+  .responsive-text-3xl {
+    font-size: 1.5rem;
+  }
+}
+
+/* Improved mobile touch interactions */
+@media (hover: none) and (pointer: coarse) {
+  button:hover {
+    transform: none;
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+}
